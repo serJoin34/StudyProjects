@@ -1,0 +1,27 @@
+.table.table-striped{
+    margin-bottom: 0 !important;
+    border-radius: 0 0 10px 10px;
+    border: 0
+}
+th{
+    text-align: center;
+    border: 1px solid #cccccc
+}
+.weekday-week{
+    text-align: center;
+}
+.weekday-day{
+    text-align: center;
+}
+.weekday-day:hover{
+    background-color: rgb(52,58,64, 0.6);
+    color: white;
+}
+.out-month{
+    background-color: rgba(52,58,64, 0.5);
+    color: white;
+}
+.out-month:hover{
+    background-color: rgb(235,236,237);
+    color: black;
+}

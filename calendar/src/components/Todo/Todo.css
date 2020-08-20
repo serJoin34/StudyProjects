@@ -1,0 +1,105 @@
+.todo-list{
+    width: 80%;
+    margin: 35px auto 35px auto;
+}
+.todo-nav{
+    width: 100%;
+    color: white;
+
+}
+.show-time{
+    display: flex;
+    justify-content: flex-end;
+    
+}
+.show-time__title{
+    min-height: 100%;
+    margin-right: 15px;
+    display: inline-block;
+}
+.show-time p{
+    vertical-align: bottom;
+    margin-bottom: 0;
+    
+}
+.btn-time{
+    border-radius: 5px !important;
+    background-color: white;
+    margin-right: 10px;
+}
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    flex: 0 1 calc(20% - 1.5em);
+    height: 170px;
+    border-radius: 8px !important;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.card-header{
+    overflow: hidden;
+}
+.card-body{
+    padding: 0 !important;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.show-card{
+    position: relative;
+    bottom: 0;
+}
+.card-text{
+    border-radius: 5px;
+    background-color: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .todo-list{
+        width: 100%;
+        margin: 15px auto 15px auto;
+    }
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+ 
+    .card {
+        flex: 0 1 calc(30% - 1.5em);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .todo-list{
+        width: 100%;
+        margin: 15px auto 15px auto;
+    }
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+ 
+    .card {
+        flex: 0 1 calc(50% - 1.5em);
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .todo-list{
+        width: 100%;
+        margin: 15px auto 15px auto;
+    }
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+ 
+    .card {
+        flex: 0 1 calc(100% - 1em);
+    }
+}

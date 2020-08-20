@@ -1,0 +1,27 @@
+.main-nav{
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0 ;
+}
+.select-conteiner{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+}
+.select-month{
+    margin-right: 30px;
+}
+.previor-btn{
+    float: left;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
+.next-btn{
+    float: right;
+    border: 0;
+    border-radius: 5px;
+    padding: 5px 10px 5px 10px;
+}
