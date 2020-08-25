@@ -19,7 +19,6 @@ class TodoList extends React.Component{
         this.hanlerOpenCard = this.hanlerOpenCard.bind(this)
     }
 
-
     hanlerOpenCard(id,title, body){
         this.props.showCard(id, title, body)
     }
@@ -59,8 +58,6 @@ class TodoList extends React.Component{
         }
 
     } 
-
-
 }
 
 TodoList.propType ={
