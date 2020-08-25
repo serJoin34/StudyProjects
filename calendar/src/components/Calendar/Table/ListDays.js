@@ -90,7 +90,8 @@ class ListDays extends React.Component{
                 <tbody>
                     {this.state.daysMonth.map((week, weekIndex) => {
                         return (
-                            <tr className='weekday-week' key={weekIndex}>{
+                            <tr className='weekday-week' key={weekIndex}>
+                            {
                                 week.map((day, dayIndex) => {
                                     if (day.today === true){
                                         return(

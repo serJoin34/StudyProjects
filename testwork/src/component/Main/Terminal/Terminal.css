@@ -1,0 +1,36 @@
+.set-terminal{
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.form-control{
+    margin: 15px
+}
+.set-terminal__btn-input{
+    margin: 15px
+}
+.set-terminal__list-terminals{
+    padding: 0;
+}
+.set-terminal__list-terminals-row{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.set-terminal__list-terminals-row__name{
+    width: 44%;
+    padding-top: 5px;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+.set-terminal__list-terminals-row__desc{
+    width: 44%;
+    padding-top: 5px;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+.set-terminal__list-terminals-row__btn{
+    width: calc(10% - 10px);
+    border: 0.5px solid black !important;
+}
