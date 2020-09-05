@@ -27,14 +27,14 @@ class modalCreateTodo extends React.Component{
     handlerSetTodo(){
         let todoId = null
         this.props.todo.map(id => {
-            todoId = id.id
-            return todoId
+            return todoId = id.id
         })
         if(todoId === null){
-            this.props.setTodo(0, this.state.title, this.state.content, this.props.modal)
+            this.props.setTodo(0, this.state.title, this.state.content, this.props.modalDate)
             this.props.showTodo(null)           
-        }else{
-            this.props.setTodo(todoId + 1, this.state.title, this.state.content, this.props.modal)
+        }
+        else{
+            this.props.setTodo(todoId + 1, this.state.title, this.state.content, this.props.modalDate)
             this.props.showTodo(null)
         }
 
@@ -79,7 +79,7 @@ class modalCreateTodo extends React.Component{
 modalCreateTodo.propType ={
     date: PropType.object.isRequired,
     todo: PropType.object.isRequired,
-    modal: PropType.object.isRequired,
+    modalDate: PropType.object.isRequired,
     setTodo: PropType.object.isRequired,
     showTodo: PropType.object.isRequired
 }

@@ -8,19 +8,14 @@ class BuyersNav extends React.Component{
         this.state={
             name: ''
         }
-        this.componentDidMount = this.componentDidMount.bind(this)
         this.handlerSetPagination = this.handlerSetPagination.bind(this)
         this.handlerStateName = this.handlerStateName.bind(this)
         this.handlerSearchName = this.handlerSearchName.bind(this)
         this.handlerSearchClear = this.handlerSearchClear.bind(this)
     }
 
-    componentDidMount(){
-
-    }
-
     handlerSetPagination(e){
-        this.props.setPagination(Number(e.target.value))
+        this.props.setPagination(Number(e.target.value), 0)
     }
 
     handlerStateName(e){

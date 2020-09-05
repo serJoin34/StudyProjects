@@ -17,7 +17,7 @@ class App extends React.Component{
         <Calendar date={this.props.date} setDate = {this.props.setDateAction} todo={this.props.todo} showTodo={this.props.showTodoAction}/>
         <TodoList date={this.props.date} todo={this.props.todo} showCard={this.props.showCardAction}/>
         {
-          this.props.modal.visibleTodo ? <ModalCreateTodo date={this.props.date} todo={this.props.todo} modal={this.props.modal.date} setTodo={this.props.setTodoAction} showTodo={this.props.showTodoAction}/> : null
+          this.props.modal.visibleTodo ? <ModalCreateTodo date={this.props.date} todo={this.props.todo} modalDate={this.props.modal.date} setTodo={this.props.setTodoAction} showTodo={this.props.showTodoAction}/> : null
         }
         {
           this.props.card.visibleCard ? <ModalCard card={this.props.card} showCard={this.props.showCardAction} deleteTodo={this.props.deleteTodoAction} changeTodo={this.props.changeTodoAction}/> : null

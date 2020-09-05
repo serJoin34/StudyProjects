@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Main from './component/Main/Main'
 import Auth from './component/Auth/Auth'
 import './App.css';
-import { authUser } from './store/actions/authAction';
+import { authUser, fetchAuth } from './store/actions/authAction';
 import { setTerminal, deleteTerminal } from './store/actions/terminalAction';
 import { setPagination, sortBuyers } from './store/actions/buyerAction';
 
@@ -15,7 +15,7 @@ class App extends React.Component {
       return(
         <div className='App'>
           {
-            <Auth authUser={this.props.authUserAction}/>
+            <Auth fetchAuth={this.props.fetchAuthAction}/>
           }
         </div>
       )
@@ -24,7 +24,7 @@ class App extends React.Component {
         <div className="App">
           {
             <Main 
-            auth={this.props.auth.avatar}
+            avatar={this.props.auth.avatar}
             authUser={this.props.authUserAction}
             terminal={this.props.terminal} 
             setTerminal={this.props.setTerminalAction} 
@@ -52,10 +52,11 @@ const mapStateToProps = store => {
 }
 const mapDispatchToProps = dispatch => {
   return {
-     authUserAction: (email, password, avatar) => dispatch(authUser(email, password, avatar)),
+     authUserAction: (login, password, avatar) => dispatch(authUser(login, password, avatar)),
+     fetchAuthAction: (login, password) => dispatch(fetchAuth(login, password)),
      setTerminalAction: (id, name, desc) => dispatch(setTerminal(id, name,desc)),
      deleteTerminalAction: id => dispatch(deleteTerminal(id)),
-     setPaginationAction: pagesCol => dispatch(setPagination(pagesCol)),
+     setPaginationAction: (colPages, currentPages) => dispatch(setPagination(colPages, currentPages)),
      sortBuyersAction: (num, name) => dispatch(sortBuyers(num, name))
   }
 }

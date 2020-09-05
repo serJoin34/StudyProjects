@@ -88,32 +88,36 @@ class ListDays extends React.Component{
         if(this.state.daysMonth !== null){
             return(
                 <tbody>
-                    {this.state.daysMonth.map((week, weekIndex) => {
+                {
+                    this.state.daysMonth.map((week, weekIndex) => {
                         return (
                             <tr className='weekday-week' key={weekIndex}>
                             {
-                                week.map((day, dayIndex) => {
-                                    if (day.today === true){
-                                        return(
-                                            <td className='weekday-day bg-dark' style={{color:"white"}} key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
-                                        )
-                                    }
-                                    else if (day.today === false){
-                                        return(
-                                            <td className='weekday-day' key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
-                                        )                                    
-                                    }
-                                    else if (day.today === -1 || day.today === 1){
-                                        return(
-                                            <td className='weekday-day out-month' key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
-                                        )                                    
-                                    } 
-                                    return day                               
+                                week.map((day, dayIndex) => {      
+                                    switch(day.today){
+                                        case true:
+                                            return(
+                                                <td className='weekday-day' style={{color:"white", background:'#343a40'}} key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
+                                            )                                       
+                                        case -1:
+                                            return(
+                                                <td className='weekday-day out-month' key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
+                                            ) 
+                                        case 1:
+                                            return(
+                                                <td className='weekday-day out-month' key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
+                                            ) 
+                                        default: 
+                                            return(
+                                                <td className='weekday-day' key={dayIndex} onClick={() => this.createTodo(day.date, day.today)}>{day.day}</td>
+                                            ) 
+                                    }                         
                                 })
                             }
                             </tr>
                         )
-                    })}
+                    })
+                }
                 </tbody>
             )
         }

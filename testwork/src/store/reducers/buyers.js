@@ -35,7 +35,7 @@ const initialState = [
         id: 10, name:'Иван', check: 1400, colBuy: 13, allBuy: 18200  
     },
     {
-        id: 11, name:'Маким', check: 4100, colBuy: 18, allBuy: 73800  
+        id: 11, name:'Максим', check: 4100, colBuy: 18, allBuy: 73800  
     },
     {
         id: 12, name:'Олег', check: 2300, colBuy: 5, allBuy: 11500  
@@ -51,10 +51,15 @@ const initialState = [
     },
 ]
 
-export function pagesReducer(state = initialState.length, action){
+const initialPages={
+    colItems: initialState.length,
+    currentPages: 0
+}
+
+export function pagesReducer(state = initialPages, action){
     switch (action.type){
         case SET_PAGINATION:
-            return action.pagesCol
+            return { colItems: action.colItems, currentPages: action.currentPages, colPages: Math.ceil( initialState.length / action.colItems ) }
 
         default: return state
     }
@@ -79,14 +84,14 @@ export function pagesReducer(state = initialState.length, action){
                 case true:
                     state = state.filter(num =>{
                         return num
-                    }).sort((a,b) => b[action.name] - a[action.name])
+                    }).sort((a,b) => a[action.name] - b[action.name])
                     
                     return state
                 
                 case false:
                     state = state.filter(num =>{
                         return num
-                    }).sort((a,b) => a[action.name] - b[action.name])
+                    }).sort((a,b) => b[action.name] - a[action.name])
                     return state
 
                 default: return initialState

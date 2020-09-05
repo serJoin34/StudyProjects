@@ -1,9 +1,10 @@
 export const SET_PAGINATION = 'SET_PAGINATION'
 
-export function setPagination(pagesCol) {
+export function setPagination(colItems, currentPages) {
     return {
       type: SET_PAGINATION,
-      pagesCol: pagesCol
+      colItems: colItems,
+      currentPages: currentPages
     }
   }
 

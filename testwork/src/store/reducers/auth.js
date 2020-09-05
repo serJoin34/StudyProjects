@@ -8,9 +8,9 @@ let InintialState = {
   
   export function authReducer(state = InintialState, action) {
     switch (action.type) {
-        case AUTH_USER:
+      case AUTH_USER:
           return { login: action.login, password: action.password, avatar: action.avatar }
-          
+            
         default:
           return state
       }

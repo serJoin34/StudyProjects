@@ -13,7 +13,7 @@ class BuyersHeader extends React.Component{
 
     handlerSorted(n){
         let th = document.getElementsByTagName('th')
-        for(let i = 0; i < th.length; i ++){
+        for(let i = 0; i < th.length; i++){
             if(i === n){
                 if(th[i].className === 'col bg-success'){
                     th[i].className = 'col bg-primary'

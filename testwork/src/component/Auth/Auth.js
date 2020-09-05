@@ -6,8 +6,8 @@ class Auth extends React.Component{
     constructor(){
         super()
         this.state={
-            login: '',
-            password: '',
+            login: 'serJoin34',
+            password: 'fsfds4535FDFD',
             style: {
                 border: '1px solid #cccccc'
             },
@@ -33,35 +33,23 @@ class Auth extends React.Component{
         })
     }
 
+    erorrAuth(){
+        this.setState({
+            style: { border: '1px solid red' }
+        })
+    }
+
     handlerAuth(){    
         let a = /([a-z]+[A-Z]+[0-9]+|[a-z]+[0-9]+[A-Z]+|[A-Z]+[a-z]+[0-9]+|[A-Z]+[0-9]+[a-z]+|[0-9]+[a-z]+[A-Z]+|[0-9]+[A-Z]+[a-z]+)/
         if(a.test(this.state.password) && this.state.password.length > 8 && this.state.password.length < 26 && this.state.login !== ''){
-            fetch(`https://api.github.com/users/${this.state.login}`)
-            .then(response => {
-                return response.json()
-            })
-            .then(data => {
-                this.props.authUser(this.state.login, this.state.password, data.avatar_url)
-            })
-            .catch(er => {
-                console.log(er);
-            })
+            this.props.fetchAuth(this.state.login, this.state.password)
         }
         else{
-            this.setState({
-                style: {
-                    border: '1px solid red',
-                },
-                placeholder: {
-                    placeholder1: 'Неверный логин',
-                    placeholder2: 'Неверный пароль'
-                }
-            })
+            this.erorrAuth()
         }
     }
 
     render(){
-
         return(
             <section className='auth-conteiner'>
                 <h2>Авторизация</h2>
@@ -74,7 +62,7 @@ class Auth extends React.Component{
 }
 
 Auth.propTypes={
-    authUser: PropTypes.func.isRequired
+    fetchAuth: PropTypes.func.isRequired
 }
 
 export default Auth

@@ -6,8 +6,8 @@ class ModalCard extends React.Component{
     constructor(){
         super()
         this.state = {
-            title: null,
-            content: null
+            title: '',
+            content: ''
         }
         this.componentDidMount = this.componentDidMount.bind(this)
         this.changeTitle = this.changeTitle.bind(this)

@@ -42,7 +42,7 @@ class Main extends React.Component{
                     </ul>
                 </div>
                 <div className='account-block'>
-                    <img src={this.props.auth} alt='avatar' className='account-block__avatar'></img>
+                    <img src={this.props.avatar} alt='avatar' className='account-block__avatar'></img>
                     <button className='btn btn-primary' onClick={this.handlerOut}>Out</button>
                 </div>
             </nav>

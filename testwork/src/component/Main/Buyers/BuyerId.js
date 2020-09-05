@@ -16,8 +16,7 @@ class BuyerId extends React.Component{
             </thead>
             <tbody>
                 {
-                    this.props.buyers.map((buyer, index) => {
-                        if (buyer.id === Number(this.props.match.params.id)){
+                    this.props.buyers.filter(buyer => buyer.id === Number(this.props.match.params.id)).map((buyer, index) => {
                             return (
                                 <tr key={index}>
                                     <td>{buyer.id}</td>
@@ -27,7 +26,6 @@ class BuyerId extends React.Component{
                                     <td>{buyer.allBuy}</td>
                                 </tr>   
                             )
-                        }
                     })
                 } 
             </tbody>
