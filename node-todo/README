@@ -1,0 +1,5 @@
+To start a project:
+1. cd ./node-todo
+2. run command: npm run start
+3. cd ./node-todo/frontend
+4 run command: npm start
