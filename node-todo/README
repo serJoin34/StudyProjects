@@ -9,4 +9,4 @@ To start a project:
 5. run command:npm start
 
 
-Swagger-page: /api-docs
+Swagger-panel: /api-docs
