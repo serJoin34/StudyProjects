@@ -1,3 +1,5 @@
+Start date: 18.10.2020
+
 To start a project:
 1. cd ./node-todo
 2. run command: npm run start
