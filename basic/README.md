@@ -5,6 +5,9 @@
     <h1 align="center">Yii 2 Basic Project Template</h1>
     <br>
 </p>
+Start date: 17.10.2020
+
+Swagger-panel: /docs
 
 Yii 2 Basic Project Template is a skeleton [Yii 2](http://www.yiiframework.com/) application best for
 rapidly creating small projects.
